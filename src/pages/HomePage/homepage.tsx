@@ -1,7 +1,9 @@
 import React from "react"
+import  './homepage.css'
 const Homepage : React.FC<{}> =() =>{
     return(
-        <div>Home</div>
+    <div>homepage</div>
+
     );
 };
 export default Homepage

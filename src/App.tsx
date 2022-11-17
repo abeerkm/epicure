@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Header from './layouts/Header';//<Route path="/Resturants" element={<Resturants />} />
-import Homepage from './pages/homepage';
-import Resturants from './pages/Resturants';
+import Header from './layouts/Header/Header';
+import Homepage from './pages/HomePage/homepage';
+import Resturants from './pages/Resturants/Resturants';
 function App() {
   return (
             <BrowserRouter>
