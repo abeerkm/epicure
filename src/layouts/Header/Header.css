@@ -2,23 +2,17 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: "Titillium Web", sans-serif;
+	font-family: "Helvetica Neue";
 }
 
-:root {
-	--mainColor: #29335c;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
-	--textColor: #eee;
-}
+
 
 header {
 	display: flex;
 	align-items: center;
 	height: 46px;
 	padding: 0 2rem;
-	background-color: white;
-	color: var(--textColor);
+	background: #FFFFFF;
 	justify-content: space-between;
 
 
@@ -26,13 +20,14 @@ header {
 
 nav a {
 	margin: 0 1rem;
-	color: black;
+	color: rgba(0, 0, 0, 1);
 	text-decoration: none;
+
 }
 
 
 header .nav-btn {
-	color:black;
+	color:rgba(0, 0, 0, 1);
 	display: flex;
 	padding: 5px;
 	cursor: pointer;
@@ -46,6 +41,14 @@ header .nav-btn {
 	left: 8%;
 
 }
+header .search ,.login ,.bag{
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1.8rem;
+
+
+}
 
 header div,
 nav {
@@ -55,7 +58,7 @@ nav {
 .header .logo{
 	display: flex;
 	text-align: center;
-	left:50%;
+	left: 45.6%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -65,21 +68,31 @@ nav {
 	}
 
 	header nav {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		height: 40%;
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 1.5rem;
 		background-color: white;
 		transition: 1s;
 		transform: translateY(-100vh);
+		justify-content: space-between;
+
+		
+	}
+	.menuItems{
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-left: 1.5rem;
+		display: flex;
+
+	}
+	 ul {
+		list-style-type: none;
 
 	}
 
+	
 	header .responsive_nav {
 		transform: none;
 	}
@@ -90,15 +103,39 @@ nav {
 	}
 
 	nav a {
-		font-size: 1.5rem;
-	}
-	.logo{
-		position: absolute;
-		text-align: center;
-		font-size: 1.2rem;
-		left:50%;
-		
+		font-size: 18px;
+		font-weight: 200;
+		line-height: 22px;
+		letter-spacing: 1.9199999570846558px;
+		text-align: left;
 
+
+	}
+	header .logo{
+		position: absolute;
+		left:45.6%;
+	}
+	.rightside{
+		float:right;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 0px;
+		gap: 15%;
+		position: fixed;
+		left: 68%;
+		right: 5.33%;
+		top:1%
+
+	}
+	.logoimage{
+		height: 40px;
+		width: 37px;
+		border-radius: 0px;
+
+	}
+	.hideimage{
+		visibility: hidden;
 	}
 
 }
