@@ -1,8 +1,9 @@
-import React from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Header from './layouts/Header/Header';
 import Homepage from './pages/HomePage/homepage';
 import Resturants from './pages/Resturants/Resturants';
+import Footer from './layouts/Footer/Footer'; 
+
 function App() {
   return (
             <BrowserRouter>
@@ -14,7 +15,7 @@ function App() {
 
                  </Route>
                    </Routes>
-                           
+                  <Footer/>       
                  </BrowserRouter>
   );
 

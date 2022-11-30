@@ -1,54 +1,66 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv } from "./NavElements";
 import { FaBars, FaTimes } from "react-icons/fa";
-import {BiSearchAlt} from "react-icons/bi";
-import {RiShoppingBag2Line} from "react-icons/ri";
-import {BsPerson} from "react-icons/bs";
-import "./Header.css";
+import { BiSearchAlt } from "react-icons/bi";
+import { RiShoppingBag2Line } from "react-icons/ri";
+import { BsPerson } from "react-icons/bs";
 import logo from "../../images/about-logo@3x 1.png"
-import login from "../../images/login.png";
+import Footer from "../Footer/Footer";
 
 function Header() {
-	const navRef = useRef<HTMLDivElement>(null);
-	const [hideimage,sethideimage]=useState(true);
-	const [hideicons,sethideicons]=useState(true);
+	const [IsOpen, setIsOpen] = useState(false);
+	const [hideImage, sethideImage] = useState(false);
+	const [hideIcons, sethideIcons] = useState(false);
 
 	const showNavbar = () => {
-		const node = navRef.current;
-		node?.classList.toggle("responsive_nav");
-		hideimage? sethideimage(false):sethideimage(true);
+		if (IsOpen) {
+			setIsOpen(false);
+			sethideImage(false);
+			sethideIcons(false);
+		}
+		else {
+			setIsOpen(true);
+			sethideImage(true);
+			sethideIcons(true);
+		}
 	};
 
 	return (
-		<header>
-			<nav ref={navRef}>
-				<ul className="menuItems">
-					<li><a href="/#">Resturants</a></li>
-					<li><a href="/#">Chefs</a></li>
-				</ul>
-				<button
-					className="nav-btn nav-close-btn"
+		<NavHeader>
+			<Nav IsOpen={IsOpen}>
+				<MenuItems>
+					<List><ListA href="/#">Resturants</ListA></List>
+					<List><ListA href="/#">Chefs</ListA></List>
+					<Line/>
+					<List><FooterDiv><Footer/></FooterDiv></List>
+					
+				</MenuItems>
+
+
+				<NavCloseButton title="close"
 					onClick={showNavbar}>
 					<FaTimes />
-				</button>
-			</nav>
-			<div className="logo"><img className={hideimage ? "logoimage" : "hideimage"} src={logo} alt="logo"/></div>
+				</NavCloseButton>
+			</Nav>
+			<LogoClass><LogoImage hideImage={hideImage} src={logo} alt="logo" /></LogoClass>
 
-			<button className="nav-btn" onClick={showNavbar}>
+			<NavButton title="openMenu" onClick={showNavbar}>
 				<FaBars />
-			</button>
-			<div className="rightside">
-				<button className="search" onClick={showNavbar}>
+			</NavButton>
+			<RightSide>
+				<Search hideIcons={hideIcons} title="search" onClick={showNavbar}>
 					<BiSearchAlt />
-				</button>
-				<button className="login" onClick={showNavbar}>
+				</Search>
+				<LogIn hideIcons={hideIcons} title="login" onClick={showNavbar}>
 					<BsPerson />
-				</button>				
-				<button className="bag" onClick={showNavbar}>
+				</LogIn>
+				<Bag hideIcons={hideIcons} title="bag" onClick={showNavbar}>
 					<RiShoppingBag2Line />
-				</button>
-			</div>
-		</header>
+				</Bag>
+			</RightSide>
+		</NavHeader>
 	);
 }
 
 export default Header;
+
