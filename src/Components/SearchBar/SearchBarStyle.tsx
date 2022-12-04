@@ -57,9 +57,6 @@ export const SearchBox = styled.div`
 export const Icon = styled.div`
     margin-left:5%;
     font-size: 1.4rem;
-
-    
-
 `;
 
 export const SearchInput = styled.input`
