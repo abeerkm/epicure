@@ -15,13 +15,14 @@ export const HomeContainer = styled.div`
 
     @media (max-width: 800px) {
     grid-template-columns: 100%;
-    grid-template-rows:  17.2rem 14rem 23rem 30rem;
+    grid-template-rows:  17.2rem 15rem 28rem 35rem;
 
     grid-template-areas:
         "searchbar"
         "resturant"
         "dishes"
-        "type";
+        "type"
+        "chefs";
     }
 `;
 
@@ -34,10 +35,16 @@ export const Resturants = styled.div`
     grid-area: resturant;
     margin-left:1rem;
 `;
-export const Chefs = styled.div`
+export const Dish = styled.div`
     grid-area: dishes;
     margin-left:1rem;
+    margin-top:2rem;
 `;
 export const Type = styled.div`
     grid-area: type;
+`;
+export const Chefs =styled.div`
+    grid-area: chefs;
+    margin-left:1rem;
+
 `;

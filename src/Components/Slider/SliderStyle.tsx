@@ -45,7 +45,6 @@ export const ResturantName = styled.p`
 export const ChefName = styled.p`
   
     white-space: nowrap;
-
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 200;
@@ -53,7 +52,7 @@ export const ChefName = styled.p`
     line-height: 125%;
 
 `;
-export const Topic = styled.p`
+export const Topic = styled.h3`
     position: absolute;
     width: 50%;
     height: 1.5rem;
@@ -61,11 +60,10 @@ export const Topic = styled.p`
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 200;
-    font-size: 1.2rem;
     line-height: 133%;
     letter-spacing: 1.25px;
     text-transform: uppercase;
     color: #000000;
-    margin-bottom:10rem;
 
 `;
+

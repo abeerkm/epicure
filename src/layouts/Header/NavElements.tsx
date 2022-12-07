@@ -23,7 +23,8 @@ export const MenuItems = styled.ul`
         gap: 1.5rem;
         margin-left: 1.5rem;
         display: flex;
-        margin-top:2.5rem;
+        margin-top:4rem;
+
         
     }
 `;
@@ -45,13 +46,11 @@ export const Line = styled.div`
 @media only screen and (max-width: 800px) {
 
     position: absolute;
-    width: 23rem;
+    width: 100%;
     height: 0;
     left: -0.063rem;
-    top: 50%;
-    display:fixed;
     border: 0.063rem solid #F2F2F2;
-    margin-top: 2.5rem;
+    top:50%;
 
 }
 `;
@@ -60,8 +59,13 @@ export const FooterDiv = styled.div`
     @media only screen and (max-width: 800px) {
         display:flex;
         position: absolute;
-        margin-top: 5.5rem;
+        margin-top: 9rem;
         margin-left: -0.063rem;
+        font-size: 1.125rem;
+		font-weight: 200;
+		line-height: 1.375rem;
+		letter-spacing: 0.12rem;
+        
 
     }
 `;
@@ -71,12 +75,14 @@ export const Nav = styled.nav<{IsOpen:boolean}>`
         position: fixed;
 		top: 0;
 		left: 0;
-		height: 40%;
+		height: 23.9rem;
 		width: 100%;
 		background-color: white;
 		transition: 0.5s;
 		justify-content: space-between;
         display:${btn=> btn.IsOpen ? "flex":"none"};
+        z-index:99;
+
 
 
 `;

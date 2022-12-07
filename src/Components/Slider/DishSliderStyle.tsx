@@ -1,15 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CardContainer , Topic, Image, Details, ChefName, ResturantName } from './SliderStyle'
+import { CardContainer , Details, ChefName, ResturantName } from './SliderStyle'
 
 export const Container = styled(CardContainer)`
-    height: 21rem;
+    height: 22rem;
+`;
 
-`;
-export const SignatureDish = styled(Topic)`
-`;
-export const DishImage = styled(Image)`
-`;
 export const DishDetails = styled(Details)`
     height:17rem;
     gap:1rem;

@@ -1,12 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { resturantData } from "./resturantData";
-import { CardContainer, ChefName, Details, Image, ResturantName, Topic } from "./SliderStyle";
-export default function Slider() {
+import { resturantData } from "./SwipersData";
+import {  CardContainer, ChefName, Details, Image, ResturantName, Topic } from "./SliderStyle";
+import { ResturantLink } from "../CommonComponents/CommonComponents";
+
+export default function ResturantSlider() {
   return (
     <>
       <Topic>popular restaurant in epicure:</Topic>
-
+      
       <Swiper
         spaceBetween={5}
         slidesPerView={1.4}
@@ -26,6 +28,8 @@ export default function Slider() {
 
         }
       </Swiper>
+      <ResturantLink/>
+
     </>
   );
 }

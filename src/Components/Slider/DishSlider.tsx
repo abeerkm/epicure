@@ -1,12 +1,14 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Container, DishDetails, DishImage, DishName, SignatureDish, DishContent, Icon, Price } from './DishSliderStyle'
-import { DishData, resturantData } from "./resturantData";
+import { ResturantLink } from '../CommonComponents/CommonComponents';
+import { Container, DishDetails, DishName, DishContent, Icon, Price } from './DishSliderStyle'
+import { DishData } from "./SwipersData";
+import { Topic, Image } from './SliderStyle';
 
 export const DishSlider = () => {
   return (
     <>
-    <SignatureDish>Signature Dish Of: </SignatureDish>
+    <Topic>Signature Dish Of: </Topic>
 
     <Swiper
       spaceBetween={5}
@@ -16,7 +18,7 @@ export const DishSlider = () => {
        {DishData.map(resturant=>(
         <SwiperSlide key={resturant.id}>
           <Container>
-            <DishImage src={resturant.image} alt="res"/>
+            <Image src={resturant.image} alt="res"/>
             <DishDetails>
               <DishName>{resturant.DishName}</DishName>
               <DishContent>{resturant.DishContent}</DishContent>
@@ -25,10 +27,13 @@ export const DishSlider = () => {
             </DishDetails>
           </Container>
         </SwiperSlide>
+
       ))
 
       }
     </Swiper>
+    <ResturantLink/>
+
   </>
 );
 }

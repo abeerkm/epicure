@@ -31,10 +31,10 @@ function Header() {
 				<MenuItems>
 					<List><ListA href="/#">Resturants</ListA></List>
 					<List><ListA href="/#">Chefs</ListA></List>
-					<Line/>
 					<List><FooterDiv><Footer/></FooterDiv></List>
-					
 				</MenuItems>
+				<Line/>
+
 
 
 				<NavCloseButton title="close"
