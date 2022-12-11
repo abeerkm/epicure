@@ -1,6 +1,6 @@
-import rest1 from "./slider-images/unnamed.jpg";
-import spicy from "./slider-images/spicy.png"
-import meal from "./slider-images/meal.png"
+import rest1 from "../../images/slider-images/unnamed.jpg";
+import spicy from "../../images/slider-images/spicy.png"
+import meal from "../../images/slider-images/meal.png"
 export const resturantData = [
     {
         id: 1,

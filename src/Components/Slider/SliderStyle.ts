@@ -1,5 +1,7 @@
 import styled from "styled-components";
+export const Container = styled.div`
 
+`;
 export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,19 +35,17 @@ export const ResturantName = styled.p`
     height: 1.4rem;
     white-space: nowrap;
 
-    font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 21px;
-    letter-spacing: 2.67px;
+    font-size: 1.125rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.167rem;
 
 
 `;
 export const ChefName = styled.p`
   
     white-space: nowrap;
-    font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 200;
     font-size: 1rem;
@@ -54,16 +54,16 @@ export const ChefName = styled.p`
 `;
 export const Topic = styled.h3`
     position: absolute;
-    width: 50%;
+    max-width: 70%;
     height: 1.5rem;
     white-space: nowrap;
-    font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 200;
     line-height: 133%;
-    letter-spacing: 1.25px;
+    letter-spacing: 0.07rem;
     text-transform: uppercase;
     color: #000000;
+    font-size:1.125rem;
 
 `;
 

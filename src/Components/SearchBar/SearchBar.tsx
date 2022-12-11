@@ -1,5 +1,6 @@
-import {  HeroImage, Icon, SearchBox, SearchContainer, SearchInput, Sentence } from './SearchBarStyle'
+import {  HeroImage, SearchContainer, Sentence } from './SearchBarStyle'
 import { BiSearchAlt } from "react-icons/bi";
+import { SearchComponent } from '../CommonComponents/CommonComponents';
 
 export const SearchBar = () => {
   return (
@@ -8,12 +9,7 @@ export const SearchBar = () => {
         <Sentence>
         Epicure works with the top chef restaurants in Tel Aviv
         </Sentence>
-        <SearchBox>
-          <Icon>
-            <BiSearchAlt/>
-          </Icon>
-          <SearchInput placeholder='Search for restaurant cuisine, chef'></SearchInput>
-        </SearchBox>
+        <SearchComponent/>
       </SearchContainer>
     </HeroImage>
   )

@@ -11,29 +11,32 @@ export const NavHeader = styled.header`
     left: -1px;
 
 `;
-export const MenuItems = styled.ul`
+export const MenuItems = styled.ul<{menuItems:boolean}>`
     display: inline-block;
     justify-content: space-between;
     position: absolute;
     list-style-type: none;
     top:1rem;
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         flex-direction: column;
         gap: 1.5rem;
         margin-left: 1.5rem;
         display: flex;
         margin-top:4rem;
+        display:${btn=> btn.menuItems ? "flex":"none"};
+
 
         
     }
 `;
+
 export const List = styled.li`
 `;
 export const ListA = styled.a`
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         font-size: 1.125rem;
 		font-weight: 200;
 		line-height: 1.375rem;
@@ -42,8 +45,11 @@ export const ListA = styled.a`
     }
 
 `;
-export const Line = styled.div`
-@media only screen and (max-width: 800px) {
+export const SearchComponent = styled.div`
+    margin-top:5rem;
+`; 
+export const Line = styled.div<{menuItems:boolean}>`
+@media only screen and (max-width: 600px) {
 
     position: absolute;
     width: 100%;
@@ -51,15 +57,17 @@ export const Line = styled.div`
     left: -0.063rem;
     border: 0.063rem solid #F2F2F2;
     top:50%;
+    display:${btn=> btn.menuItems ? "flex":"none"};
+
 
 }
 `;
 export const FooterDiv = styled.div`
     display:none;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         display:flex;
         position: absolute;
-        margin-top: 9rem;
+        margin-top: -40rem;
         margin-left: -0.063rem;
         font-size: 1.125rem;
 		font-weight: 200;
@@ -71,7 +79,7 @@ export const FooterDiv = styled.div`
 `;
 export const Nav = styled.nav<{IsOpen:boolean}>`
     align-items: center;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         position: fixed;
 		top: 0;
 		left: 0;
@@ -80,9 +88,16 @@ export const Nav = styled.nav<{IsOpen:boolean}>`
 		background-color: white;
 		transition: 0.5s;
 		justify-content: space-between;
-        display:${btn=> btn.IsOpen ? "flex":"none"};
         z-index:99;
+        display:${btn=> btn.IsOpen ? "flex":"none"};
 
+`;
+
+export const SearchNav = styled.div<{search:boolean}>`
+    display:${btn=> btn.search ? "flex":"none"};
+    align-items: center;
+    padding: 0px 40px;
+    padding-bottom: 80%;
 
 
 `;
@@ -99,20 +114,20 @@ export const NavButton = styled.button`
     font-size: 1.8rem;
     top: 0;
     left: 5%;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         visibility: visible;
 		opacity: 1;
         
     }
 `;
 export const NavCloseButton = styled(NavButton)`
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     position: absolute;
 }
 
 `
 export const LogoImage = styled.img<{hideImage:boolean}>`
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     height: 2.3rem;
     width: 2.3rem;
     border-radius: 0rem;                     
@@ -131,8 +146,23 @@ export const LogoClass = styled.div`
     }
 
 `;
+export const SearchSubject = styled.h1<{search:boolean}>`
+    position: absolute;
+    width: 3.4rem;
+    height: 1.375rem;
+    padding-top:20%;
+
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    z-index:99;
+    visibility: ${(word)=> word.search ? 'visible' : 'hidden'}
+
+`;
+
 export const ResponsiveNav = styled.div`
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
         transform: none;
     }
 

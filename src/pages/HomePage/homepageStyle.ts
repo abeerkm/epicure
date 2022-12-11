@@ -6,14 +6,16 @@ export const HomeContainer = styled.div`
     grid-template-rows: 0.2fr 1fr 0.5fr 0.5fr;
     grid-template-areas:
     "nav nav nav nav"
-    "sidebar main main main"
-    "sidebar content content content"
-    "sidebar footer footer footer";
+    ""
+    ""
+    ""
+    ""
+    "";
     text-align: left;
     grid-gap: 3rem;
     transition: all 0.25s ease-in-out;
 
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
     grid-template-columns: 100%;
     grid-template-rows:  17.2rem 15rem 28rem 35rem;
 
@@ -22,7 +24,9 @@ export const HomeContainer = styled.div`
         "resturant"
         "dishes"
         "type"
-        "chefs";
+        "chefs"
+        "aboutUs"
+        "footer";
     }
 `;
 
@@ -45,6 +49,16 @@ export const Type = styled.div`
 `;
 export const Chefs =styled.div`
     grid-area: chefs;
+    margin-left:1rem;
+
+`;
+export const AboutUs =styled.div`
+    grid-area: aboutUs;
+    margin-bottom:3.5rem;
+
+`;
+export const FooterContainer =styled.div`
+    grid-area: footer;
     margin-left:1rem;
 
 `;

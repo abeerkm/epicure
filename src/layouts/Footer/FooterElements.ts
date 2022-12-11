@@ -1,22 +1,25 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-    position: absolute;
+    position: relative;
     justify-content: space-between;
     bottom: 0;
     width: 100%;
-    height: 5rem; 
     @media only screen and (max-width: 800px) {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
         display: flex;
         white-space: nowrap;
-        bottom:0;
+        height: 6rem; 
+        bottom: 3rem;
         margin-left:0;
+        margin-top: 46rem;
        
     }
 `;
 export const Link = styled.a`
+    width: 6.44rem;
+    height: 1.375rem;
     font-size: 1.125rem;
     font-weight: 200rem;
     line-height: 1.375rem;

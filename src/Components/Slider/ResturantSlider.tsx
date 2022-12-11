@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { resturantData } from "./SwipersData";
-import {  CardContainer, ChefName, Details, Image, ResturantName, Topic } from "./SliderStyle";
+import {  CardContainer, ChefName, Container, Details, Image, ResturantName, Topic } from "./SliderStyle";
 import { ResturantLink } from "../CommonComponents/CommonComponents";
 
 export default function ResturantSlider() {
   return (
-    <>
+    <Container>
       <Topic>popular restaurant in epicure:</Topic>
       
       <Swiper
@@ -30,6 +30,6 @@ export default function ResturantSlider() {
       </Swiper>
       <ResturantLink/>
 
-    </>
+    </Container>
   );
 }

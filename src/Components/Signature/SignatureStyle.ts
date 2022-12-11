@@ -37,7 +37,6 @@ export const Type = styled.p`
     font-weight: 200;
     font-size: 1.125rem;
     text-align:center;
-    font-family: Helvetica Neue;
     letter-spacing: 0.125rem;
 
 `;

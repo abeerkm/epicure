@@ -30,7 +30,7 @@ export const SearchContainer = styled.div`
 `;
 export const Sentence = styled.p`
     position: absolute;
-    width: 90%;
+    width: 85%;
     font-style: normal;
     font-weight: 200;
     font-size: 1.5rem;
@@ -41,34 +41,3 @@ export const Sentence = styled.p`
 
 
 `;
-export const SearchBox = styled.div`
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: absolute;
-
-    width: 90%;
-    height: 1.875rem;
-    border: 0.025rem solid #000000;
-    border-radius: 0.25%;
-    margin-top:5rem;
-`;
-export const Icon = styled.div`
-    margin-left:5%;
-    font-size: 1.4rem;
-`;
-
-export const SearchInput = styled.input`
-    width: 80%;
-    height: 1rem;
-    background: transparent;
-    border: none;
-
-    font-style: normal;
-    font-weight: 200;
-    font-size: 12px;
-    line-height: 1rem;
-    margin-left: 1rem;
-    color: #000000;
-`; 
