@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject } from "./NavElements";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { BiSearchAlt } from "react-icons/bi";
-import { RiShoppingBag2Line } from "react-icons/ri";
-import { BsPerson } from "react-icons/bs";
+import menu from "../../images/menu.svg"
+import close from "../../images/close.svg"
+import searchicon from "../../images/search.svg"
+import bag from "../../images/bag.svg"
+import user from "../../images/user.svg"
+
 import logo from "../../images/about-logo@3x 1.png"
 import Footer from "../Footer/Footer";
 import { SearchComponent } from "../../Components/CommonComponents/CommonComponents";
@@ -45,7 +47,7 @@ function Header() {
 		<NavHeader>
 			<Nav IsOpen={IsOpen}>
 				<MenuItems menuItems={menuItems}>
-					<List><ListA href="/#">Resturants</ListA></List>
+					<List><ListA href="/Resturants">Resturants</ListA></List>
 					<List><ListA href="/#">Chefs</ListA></List>
 					<List><FooterDiv><Footer/></FooterDiv></List>
 				</MenuItems>
@@ -53,28 +55,27 @@ function Header() {
 				<SearchComponent></SearchComponent>
 			</SearchNav>
 				<Line menuItems={menuItems}/>
-				<NavCloseButton title="close"
-					onClick={showNavbar}>
-					<FaTimes />
-				</NavCloseButton>
+				<NavCloseButton 
+					title="close"
+					onClick={showNavbar}
+					src={close}/>
 			</Nav>
 			<LogoClass>
 				<LogoImage hideImage={hideImage} src={logo} alt="logo" />
 				<SearchSubject search={search}>Search</SearchSubject>
 			</LogoClass>
 
-			<NavButton title="openMenu" onClick={showNavbar}>
-				<FaBars />
+			<NavButton title="openMenu" src={menu} onClick={showNavbar}>
+				
 			</NavButton>
 			<RightSide>
-				<Search hideIcons={hideIcons}  title="search" onClick={showSearchbar}>
-					<BiSearchAlt />
+			<Search src={searchicon} hideIcons={hideIcons}  title="search" onClick={showSearchbar}>
 				</Search>
-				<LogIn hideIcons={hideIcons} title="login">
-					<BsPerson />
+				<LogIn src={user} hideIcons={hideIcons} title="login">
+					
 				</LogIn>
-				<Bag hideIcons={hideIcons} title="bag">
-					<RiShoppingBag2Line />
+				<Bag src={bag} hideIcons={hideIcons} title="bag">
+					
 				</Bag>
 			</RightSide>
 		</NavHeader>

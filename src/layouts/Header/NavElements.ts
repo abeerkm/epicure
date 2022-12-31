@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const NavHeader = styled.header`
     display: flex;
     align-items: center;
@@ -67,8 +68,8 @@ export const FooterDiv = styled.div`
     @media only screen and (max-width: 600px) {
         display:flex;
         position: absolute;
-        margin-top: -40rem;
-        margin-left: -0.063rem;
+        bottom: -12rem;
+        margin-left: -1rem;
         font-size: 1.125rem;
 		font-weight: 200;
 		line-height: 1.375rem;
@@ -94,14 +95,13 @@ export const Nav = styled.nav<{IsOpen:boolean}>`
 `;
 
 export const SearchNav = styled.div<{search:boolean}>`
-    display:${btn=> btn.search ? "flex":"none"};
+    display:${btn=> btn.search ? "block":"none"};
     align-items: center;
-    padding: 0px 40px;
-    padding-bottom: 80%;
-
+    padding: 24px 30px;
+    margin-bottom:25rem;
 
 `;
-export const NavButton = styled.button`
+export const NavButton = styled.img`
     color:rgba(0, 0, 0, 1);
     display: flex;
     padding: 0.313rem;
@@ -112,17 +112,20 @@ export const NavButton = styled.button`
     visibility: hidden;
     opacity: 0;
     font-size: 1.8rem;
-    top: 0;
     left: 5%;
     @media only screen and (max-width: 600px) {
         visibility: visible;
 		opacity: 1;
+        margin-top:0.5rem;
+      
+
         
     }
 `;
 export const NavCloseButton = styled(NavButton)`
 @media only screen and (max-width: 600px) {
     position: absolute;
+    top:0.4rem;
 }
 
 `
@@ -150,7 +153,7 @@ export const SearchSubject = styled.h1<{search:boolean}>`
     position: absolute;
     width: 3.4rem;
     height: 1.375rem;
-    padding-top:20%;
+    padding:20% 25%;
 
     font-style: normal;
     font-weight: 200;
@@ -172,14 +175,14 @@ export const RightSide = styled.div`
 		display: flex;
 		flex-direction: row;
         text-align: center;
-		gap: 12%;
+		gap: 40%;
 		position: absolute;
-		right: 5%;
-		top:0.5rem;
+		right: 15%;
+		top:0.8rem;
 
     }
 `;
-export const Search = styled.button<{hideIcons:boolean}>`
+export const Search = styled.img<{hideIcons:boolean}>`
     background: transparent;
     border: none;
     outline: none;

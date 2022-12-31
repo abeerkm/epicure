@@ -32,12 +32,13 @@ export const SearchBox = styled.div`
     width: 85%;
     height: 1.875rem;
     border: 0.025rem solid #000000;
-    border-radius: 0.25%;
+    border-radius: 0.3rem;
     margin-top:5rem;
 `;
-export const Icon = styled.div`
+export const Icon = styled.img`
     margin-left:3%;
-    font-size: 1.4rem;
+    height:15px;
+    width:15px;
 `;
 
 export const SearchInput = styled.input`

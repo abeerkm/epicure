@@ -1,5 +1,4 @@
 import {  HeroImage, SearchContainer, Sentence } from './SearchBarStyle'
-import { BiSearchAlt } from "react-icons/bi";
 import { SearchComponent } from '../CommonComponents/CommonComponents';
 
 export const SearchBar = () => {

@@ -1,7 +1,7 @@
-import { BiSearchAlt } from "react-icons/bi"
+//import { BiSearchAlt } from "react-icons/bi"
 import arrow from "../../images/arrow.png"
 import { LinkContainer, ResturantsLink, Arrow, SearchBox, Icon, SearchInput } from "./CommonStyle"
-
+import search from "../../images/search.svg"
 
 export const ResturantLink = () => {
   return (
@@ -14,9 +14,7 @@ export const ResturantLink = () => {
 export const SearchComponent =() => {
   return(
   <SearchBox>
-    <Icon>
-      <BiSearchAlt/>
-    </Icon>
+    <Icon src={search}/>
     <SearchInput placeholder='Search for restaurant cuisine, chef'></SearchInput>
   </SearchBox>)
 }

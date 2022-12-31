@@ -55,10 +55,8 @@ export const Chefs =styled.div`
 export const AboutUs =styled.div`
     grid-area: aboutUs;
     margin-bottom:3.5rem;
-
 `;
-export const FooterContainer =styled.div`
+export const Footer =styled.div`
     grid-area: footer;
-    margin-left:1rem;
-
+    margin-top:43rem;
 `;

@@ -12,9 +12,7 @@ export const FooterContainer = styled.footer`
         white-space: nowrap;
         height: 6rem; 
         bottom: 3rem;
-        margin-left:0;
-        margin-top: 46rem;
-       
+        margin-left:1rem;
     }
 `;
 export const Link = styled.a`
