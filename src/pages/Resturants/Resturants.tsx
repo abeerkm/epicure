@@ -5,14 +5,13 @@ import { Details, ResturantName, ChefName } from "../../Components/Slider/Slider
 import { useDispatch, useSelector } from 'react-redux';
 import { setRestaurants } from "./slicers/restaurantsSlicer";
 import { specificRestaurant } from "./slicers/specificRestaurant";
-import moment from 'moment'
 import { useNavigate } from "react-router-dom";
-
+import { openRestaurant } from "../../Functions/functions";
 const Resturants: React.FC<{}> = () => {
 
   const restaurants = useSelector((state: any) => state.restaurants.value);
   const restaurant = useSelector((state: any) => state.restaurant.value);
-  const [active, setActive] = useState(0);
+  const [active,setActive]=useState(0);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,30 +29,12 @@ const Resturants: React.FC<{}> = () => {
    
   }
   const newRestaurants = [...restaurants].sort().reverse().slice(0, 3);
-
-
-  const openNow = restaurants.filter((restaurant: any) => {
-    let isOpen = false;
-    const day = moment().format("dddd").toLowerCase();
-    for (let i = 0; i < restaurant.workingHours.length; i++) {
-      if (restaurant.workingHours[i].day.toLowerCase() == day) {
-        if (moment().isBetween(moment(restaurant.workingHours[i].open, "hh:mm"),
-          moment(restaurant.workingHours[i].close, "hh:mm"), "minute", "[]")) {
-          isOpen = true;
-          break;
-        }
-      }
-
-    }
-    return isOpen;
-  });
-
+  const openNow = restaurants.filter(openRestaurant);
 
   const handleClick = (e: MouseEvent<HTMLElement>) => {
     const index = parseInt(e.currentTarget.id, 0);
     if (index !== active) {
-      setActive(index);
-      //setUrl(urls[index]);
+      setActive(index); 
     }
   };
 

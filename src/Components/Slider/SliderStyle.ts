@@ -21,10 +21,9 @@ export const Details = styled.div`
     flex-direction: column;
     text-align: left;
     padding: 0.5rem;
-    gap: 0.625rem;
-
+    gap: 0.8rem;
     width: 100%;
-    height: 5.6rem;
+    height: 6rem;
 
     background: #F9F4EA;
 
@@ -34,6 +33,7 @@ export const ResturantName = styled.p`
     width: 3.375rem;
     height: 1.4rem;
     white-space: nowrap;
+    margin-left:0.1rem;
 
     font-style: normal;
     font-weight: 400;
@@ -44,7 +44,7 @@ export const ResturantName = styled.p`
 
 `;
 export const ChefName = styled.p`
-  
+    margin-left:0.1rem;
     white-space: nowrap;
     font-style: normal;
     font-weight: 200;
