@@ -14,6 +14,8 @@ export const TopicContainer = styled(Topic)`
     width: 8.563rem;
     letter-spacing: 0.12rem;
     position:relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 `;
 export const Tabs = styled.div`
   overflow: hidden;
@@ -24,6 +26,7 @@ export const Tabs = styled.div`
   position: relative;
   gap:1rem;
   margin-top:1rem;
+  margin-bottom:0rem;
   margin-right: 1.3rem;
   margin-left:1.2rem;
   justify-content: space-between;

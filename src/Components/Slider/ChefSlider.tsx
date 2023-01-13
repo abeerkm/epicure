@@ -3,8 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { ResturantLink } from '../CommonComponents/CommonComponents'
 import { chefData } from './SwipersData'
 import { CardContainer, Details, ResturantName, Topic,Image } from './SliderStyle'
+import {  useSelector } from 'react-redux';
 
 export const ChefSlider = () => {
+  const chefs = useSelector((state: any) => state.chefs.value); 
   return (
     <>
       
@@ -13,12 +15,12 @@ export const ChefSlider = () => {
         slidesPerView={1.4}
         
       >
-         {chefData.map(resturant=>(
-          <SwiperSlide key={resturant.id}>
+         {chefs && chefs.map((chef:any)=>(
+          <SwiperSlide key={chef._id}>
             <CardContainer>
-              <Image src={resturant.image} alt="res"/>
+              <Image src={require(`../../${chef.image}`)} alt="res"/>
               <Details>
-                <ResturantName>{resturant.dishName}</ResturantName>
+                <ResturantName>{chef.name}</ResturantName>
               </Details>
             </CardContainer>
           </SwiperSlide>

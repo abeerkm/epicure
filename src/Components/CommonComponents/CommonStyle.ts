@@ -54,4 +54,38 @@ export const SearchInput = styled.input`
     margin-left: 1rem;
     color: #000000;
 `; 
+export const SearchResult= styled.div<{value:String}>`
+    background:white;
+    position: absolute;
+    height: 12rem;
+    overflow: scroll;
+    width: 100%;
+    margin-top: 14rem;
+    z-index: 99;
+    display:${props => (props.value!='' ? 'block':'none')}
+`
+export const List= styled.ul`
+    display: inline-block;
+    justify-content: space-between;
+    position: absolute;
+    list-style-type: none;
+    flex-direction: column;
+    gap: 0.6rem;
+    left: 1rem;
+    display: flex;
+    margin-top:1rem;
+`
+export const ItemList= styled.li`
+    font-weight: 400;
+`
+
+export const SearchTitle= styled.ul`
+    font-weight:200;
+    margin-left: -1rem;
+` 
+export const DishList= styled.ul`
+`
+export const ResContainer= styled.div`
+margin-bottom:1rem;
+`
 

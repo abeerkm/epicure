@@ -3,8 +3,11 @@ import "swiper/css";
 import { resturantData } from "./SwipersData";
 import {  CardContainer, ChefName, Container, Details, Image, ResturantName, Topic } from "./SliderStyle";
 import { ResturantLink } from "../CommonComponents/CommonComponents";
+import {  useSelector } from 'react-redux';
 
 export default function ResturantSlider() {
+  const restaurants = useSelector((state: any) => state.restaurants.value); 
+  
   return (
     <Container>
       <Topic>popular restaurant in epicure:</Topic>
@@ -14,13 +17,13 @@ export default function ResturantSlider() {
         slidesPerView={1.4}
         
       >
-         {resturantData.map(resturant=>(
-          <SwiperSlide key={resturant.id}>
+         {restaurants&& restaurants.map((restaurant:any)=>(
+          <SwiperSlide key={restaurant._id}>
             <CardContainer>
-              <Image src={resturant.image} alt="res"/>
+              <Image src={require(`../../${restaurant.img}`)} alt="res"/>
               <Details>
-                <ResturantName>{resturant.resturantName}</ResturantName>
-                <ChefName>{resturant.chefName}</ChefName>
+                <ResturantName>{restaurant.name}</ResturantName>
+                <ChefName>{restaurant.chef}</ChefName>
               </Details>
             </CardContainer>
           </SwiperSlide>

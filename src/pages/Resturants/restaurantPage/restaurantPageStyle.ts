@@ -51,3 +51,7 @@ export const Hr= styled.hr`
     width:80%;
 
 `
+export const OpenDish= styled.div<{dishOpen:boolean}>`
+    display: ${(dish) => dish.dishOpen ? 'none' : 'inline'}
+
+`

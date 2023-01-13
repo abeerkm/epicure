@@ -11,7 +11,7 @@ export const FooterContainer = styled.footer`
         display: flex;
         white-space: nowrap;
         height: 6rem; 
-        bottom: 3rem;
+        bottom: 0rem;
         margin-left:1rem;
     }
 `;

@@ -10,24 +10,11 @@ import { openRestaurant } from "../../Functions/functions";
 const Resturants: React.FC<{}> = () => {
 
   const restaurants = useSelector((state: any) => state.restaurants.value);
-  const restaurant = useSelector((state: any) => state.restaurant.value);
   const [active,setActive]=useState(0);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = "http://localhost:3001/api/restaurants/getRestaurants";
 
-  useEffect(() => {
-    fetchData(url);
-  }, []);
-  
-  const fetchData = (url:string) => {
-      const response = fetch(url).then((res) =>
-        res.json()).then((data) => dispatch(setRestaurants(data)));
-
-      return response;
-   
-  }
   const newRestaurants = [...restaurants].sort().reverse().slice(0, 3);
   const openNow = restaurants.filter(openRestaurant);
 
@@ -62,8 +49,8 @@ const Resturants: React.FC<{}> = () => {
         <Content active={active === 0}>
           {restaurants && restaurants.map((details: any) =>
             <Restaurants key={details._id}>
-              <RestCard onClick={() =>{ dispatch(specificRestaurant(details)); navigate('/RestaurantPage')}}>
-                <RestImage src={require(`../../${details.img}`)} alt={details.img} />
+              <RestCard onClick={() =>{ dispatch(specificRestaurant(details)); navigate('/Resturants/RestaurantPage')}}>
+                <RestImage src={require(`../../${details.img}`)} alt={details.img} title={details.name} />
                 <Details>
                   <ResturantName>{details.name}</ResturantName>
                   <ChefName>{details.chef}</ChefName>
@@ -76,7 +63,7 @@ const Resturants: React.FC<{}> = () => {
           {newRestaurants && newRestaurants.map((details: any) =>
             <Restaurants key={details._id}>
               <RestCard>
-                <RestImage src={require(`../../${details.img}`)} alt={details.img} />
+                <RestImage src={require(`../../${details.img}`)} alt={details.img} title={details.name} />
                 <Details>
                   <ResturantName>{details.name}</ResturantName>
                   <ChefName>{details.chef}</ChefName>
@@ -89,7 +76,7 @@ const Resturants: React.FC<{}> = () => {
           {newRestaurants && newRestaurants.map((details: any) =>
             <Restaurants key={details._id}>
               <RestCard>
-                <RestImage src={require(`../../${details.img}`)} alt={details.img} />
+                <RestImage src={require(`../../${details.img}`)} alt={details.img} title={details.name} />
                 <Details>
                   <ResturantName>{details.name}</ResturantName>
                   <ChefName>{details.chef}</ChefName>
@@ -102,7 +89,7 @@ const Resturants: React.FC<{}> = () => {
           {openNow && openNow.map((details: any) =>
             <Restaurants key={details._id}>
               <RestCard>
-                <RestImage src={require(`../../${details.img}`)} alt={details.img} />
+                <RestImage src={require(`../../${details.img}`)} alt={details.img} title={details.name} />
                 <Details>
                   <ResturantName>{details.name}</ResturantName>
                   <ChefName>{details.chef}</ChefName>

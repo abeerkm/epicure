@@ -8,11 +8,11 @@ export const CardContainer = styled.div`
     align-items: flex-start;
     margin-top:2rem;
     width: 90%;
-    height: 12.5rem;
+    height: 19.5rem;
 `;
 export const Image = styled.img`
     width: 100%;
-    height: 8.2rem;
+    height: fit-content;
     
 `;
 
@@ -53,7 +53,6 @@ export const ChefName = styled.p`
 
 `;
 export const Topic = styled.h3`
-    position: absolute;
     max-width: 70%;
     height: 1.5rem;
     white-space: nowrap;
@@ -64,6 +63,8 @@ export const Topic = styled.h3`
     text-transform: uppercase;
     color: #000000;
     font-size:1.125rem;
+    margin-bottom: -1rem;
+    margin-top:-1rem;
 
 `;
 

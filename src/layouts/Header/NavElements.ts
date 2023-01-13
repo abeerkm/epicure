@@ -68,7 +68,7 @@ export const FooterDiv = styled.div`
     @media only screen and (max-width: 600px) {
         display:flex;
         position: absolute;
-        bottom: -12rem;
+        bottom: -10rem;
         margin-left: -1rem;
         font-size: 1.125rem;
 		font-weight: 200;
@@ -96,6 +96,21 @@ export const Nav = styled.nav<{IsOpen:boolean}>`
 
 export const SearchNav = styled.div<{search:boolean}>`
     display:${btn=> btn.search ? "block":"none"};
+    align-items: center;
+    padding: 24px 30px;
+    margin-bottom:25rem;
+
+`;
+export const Login=styled.div<{login:boolean}>`
+    display:${btn=> btn.login ? "block":"none"};
+    align-items: center;
+    padding: 24px 30px;
+    margin-bottom:25rem;
+    margin-top:5rem;
+
+`
+export const DishNav = styled.div<{dish:boolean}>`
+    display:${btn=> btn.dish ? "block":"none"};
     align-items: center;
     padding: 24px 30px;
     margin-bottom:25rem;

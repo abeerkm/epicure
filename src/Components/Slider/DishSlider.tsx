@@ -4,8 +4,11 @@ import { ResturantLink } from '../CommonComponents/CommonComponents';
 import { Container, DishDetails, DishName, DishContent, Icon, Price } from './DishSliderStyle'
 import { DishData } from "./SwipersData";
 import { Topic, Image } from './SliderStyle';
+import {  useSelector } from 'react-redux';
 
 export const DishSlider = () => {
+  const dishes = useSelector((state: any) => state.dishArray.value);
+
   return (
     <>
     <Topic>Signature Dish Of: </Topic>
@@ -15,15 +18,15 @@ export const DishSlider = () => {
       slidesPerView={1.4}
       
     >
-       {DishData.map(resturant=>(
-        <SwiperSlide key={resturant.id}>
+       {dishes&& dishes.map((dish:any)=>(
+        <SwiperSlide key={dish._id}>
           <Container>
-            <Image src={resturant.image} alt="res"/>
+            <Image src={require(`../../${dish.image}`)} alt="res"/>
             <DishDetails>
-              <DishName>{resturant.DishName}</DishName>
-              <DishContent>{resturant.DishContent}</DishContent>
-              <Icon src={resturant.DishType} alt="res"/>
-              <Price>{resturant.price}</Price>
+              <DishName>{dish.dishName}</DishName>
+              <DishContent>{dish.description}</DishContent>
+              <Icon src={require('../../images/slider-images/spicy.png')} alt="res"/>
+              <Price>{dish.price}</Price>
             </DishDetails>
           </Container>
         </SwiperSlide>
