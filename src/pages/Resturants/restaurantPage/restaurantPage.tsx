@@ -94,7 +94,7 @@ export const RestaurantPage = () => {
       <Content active={active === 1}>
       { dishArray && dishArray.filter((details: any) =>details.type=="Lanch").map((details: any) =>
             <Restaurants key={details._id}>
-              <RestCard>
+              <RestCard onClick={()=>{navigate('/Order'); dispatch(setDishes(details))}}>
                 <RestImage src={require(`../../../${details.image}`)} alt={details.dishName}  />
                 <Details style={{height:"9rem"}}>
                   <ResturantName>{details.dishName}</ResturantName>
@@ -112,7 +112,7 @@ export const RestaurantPage = () => {
       <Content active={active === 2}>
       { dishArray && dishArray.filter((details: any) =>details.type=="Dinner").map((details: any) =>
             <Restaurants key={details._id}>
-              <RestCard>
+              <RestCard onClick={()=>{navigate('/Order'); dispatch(setDishes(details))}}>
                 <RestImage src={require(`../../../${details.image}`)} alt={details.img} title={details.dishName}/>
                 <Details style={{height:"9rem"}}>
                   <ResturantName>{details.dishName}</ResturantName>

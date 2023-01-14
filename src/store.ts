@@ -8,6 +8,7 @@ import autoMergeLevel1 from 'reduxjs-toolkit-persist/lib/stateReconciler/autoMer
 import chefsReduser from './pages/Chefs/chefSlice'
 import UserReduser from './Components/user/UserSlice';
 import dishArrayReduser from './pages/Resturants/slicers/dishArray';
+import OrderSlice from './Order/OrderSlice';
 const persistConfig = {
   key: 'root',
   storage: storage,
@@ -21,7 +22,8 @@ const _persistedReducer = persistCombineReducers (
   dishes:dishesReduser,
   chefs:chefsReduser,
   user:UserReduser,
-  dishArray:dishArrayReduser
+  dishArray:dishArrayReduser,
+  orderDetails:OrderSlice
   }
 );
 

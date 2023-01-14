@@ -1,8 +1,9 @@
 import styled from "styled-components";
-export const ComponentContainer = styled.nav`
-    margin-bottom:4rem;
-`
+import { Button } from "../Components/login/loginStyle";
 
+export const ComponentContainer = styled.nav`
+    margin-bottom:12rem;
+`
 export const Nav = styled.nav`
     align-items: center;
     position: absolute;
@@ -66,7 +67,7 @@ export const Paragraph = styled.p`
   font-size: 0.875rem;
   line-height: 1.313rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 200;
   margin-left: 0.2rem;
 `;
 export const RadioBox = styled.div`
@@ -128,10 +129,11 @@ export const CheckBox=styled.div`
 export const Quantity=styled.div`
     font-style: normal;
     font-weight: 200;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 1.5rem;
+    line-height: 1rem;
     text-align: center;
     letter-spacing: 1.97px;
+    margin-top: 0.4rem;
 `
 export const QuantityContainer=styled.div` 
     display: flex;
@@ -139,8 +141,13 @@ export const QuantityContainer=styled.div`
     align-items: flex-start;
     padding: 0px;
     gap: 32px;
-
-    width: 113px;
-    height: 20px;
 `
-
+export const ButtonQuantity=styled.button` 
+  border:none;
+  background: none;
+  font-size:2rem;
+`
+export const BagButton=styled(Button)`
+  margin-top:0.5rem;
+  background:black;
+`
