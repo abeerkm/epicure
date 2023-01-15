@@ -16,7 +16,7 @@ export const Dish = () => {
   const [checkList, setList ]= useState<string[]>([]);
   const dispatch=useDispatch();
   const order= {
-     dishName: '', dishImage: '',side:'',changes:[''],quantity:0 }
+     dishName: '', dishImage: '',side:'',changes:[''],quantity:0,price:0 }
 
   function incrementCount() {
     setCount(count+1);
@@ -41,6 +41,7 @@ export const Dish = () => {
     order.side=sideSelected;
     order.changes=checkList;
     order.quantity=count;
+    order.price=dish.price;
     dispatch(setOrder([order]));
   }  
 console.log(orderd)
@@ -81,8 +82,8 @@ console.log(orderd)
         <CheckBox>
           <Title>Changes</Title>
           <Label id="peanuts">
-            <input id="peanuts" type="checkbox" value='Sticky rice' onChange={handleCheck}  />
-            <Paragraph>Sticky rice</Paragraph>
+            <input id="peanuts" type="checkbox" value='Whithout peanuts' onChange={handleCheck}  />
+            <Paragraph>Whithout peanuts</Paragraph>
           </Label>
 
           <Label id="spicy">

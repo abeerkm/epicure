@@ -15,6 +15,7 @@ import { Logout } from "../../Components/user/logout";
 import { Link } from "react-router-dom";
 import { Dish } from "../../Order/Dish";
 import { Cart } from "../../Components/Cart/Cart";
+import { EmptyCart } from "../../Components/Cart/emptyCart";
 export  function Header() {
 	const [IsOpen, setIsOpen] = useState(false);
 	const [hideImage, sethideImage] = useState(false);
@@ -23,9 +24,8 @@ export  function Header() {
 	const [search, setSearch] = useState(false);
 	const [login, setLogin] = useState(false);
 	const [cart, setCart] = useState(false);
-
+	const orderDetails = useSelector((state: any) => state.orderDetails.value);
 	const users = useSelector((state: any) => state.user.value); 
-
 	 const showNavbar = () => {
 		hideNavElements();
 		setmMenuItems(true);
@@ -95,7 +95,7 @@ export  function Header() {
 
 			<NavButton title="openMenu" src={menu} onClick={showNavbar}></NavButton>
 			<CartOpen cart={cart}>
-				<Cart></Cart>
+				{orderDetails.length===0? <EmptyCart/> :<Cart/>}
 			</CartOpen>
 			<RightSide>
 			<Search src={searchicon} hideIcons={hideIcons}  title="search" onClick={showSearchbar}>

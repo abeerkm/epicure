@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { deleteOrder } from '../../Order/OrderSlice'
 import { setUser } from './UserSlice'
 const Container= styled.div`
     position: fixed;
@@ -19,7 +20,7 @@ export const Logout = () => {
   return (
     <Container>
         <Welcome>Welcome!</Welcome>
-        <Button onClick={()=>dispatch(setUser([]))}>Log out</Button>
+        <Button onClick={()=>{dispatch(setUser([]));dispatch(deleteOrder([{}]))}}>Log out</Button>
     </Container>
   )
 }

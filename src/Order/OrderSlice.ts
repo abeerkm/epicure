@@ -9,9 +9,12 @@ export const orderSlice = createSlice({
     setOrder:(state, action)=> {
       state.value=state.value.concat(action.payload);
     },
+    deleteOrder:(state, action)=> {
+      state.value=[];
+    },
   },
 })
 
-export const { setOrder } = orderSlice.actions
+export const { setOrder,deleteOrder } = orderSlice.actions
 
 export default orderSlice.reducer

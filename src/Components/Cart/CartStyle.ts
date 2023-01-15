@@ -57,16 +57,15 @@ export const Side= styled.p`
     letter-spacing: 1.23px;
     white-space: nowrap;
 `
-export const Price= styled.p`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    /* identical to box height, or 112% */
-
+export const Price= styled.div`
     display: flex;
+    flex-direction: row;
+    justify-content: end;
     align-items: flex-end;
-    text-align: center;
-    letter-spacing: 1.97px;
+    padding: 0px;
+    gap: 2px;
 
+    width: 100%;
+    height: 18px;
 `
+export const DishPrice=styled.p``
