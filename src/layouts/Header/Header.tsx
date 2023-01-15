@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject, Login, DishNav } from "./NavElements";
+import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject, Login, DishNav, CartOpen } from "./NavElements";
 import menu from "../../images/menu.svg"
 import close from "../../images/close.svg"
 import searchicon from "../../images/search.svg"
@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { Logout } from "../../Components/user/logout";
 import { Link } from "react-router-dom";
 import { Dish } from "../../Order/Dish";
+import { Cart } from "../../Components/Cart/Cart";
 export  function Header() {
 	const [IsOpen, setIsOpen] = useState(false);
 	const [hideImage, sethideImage] = useState(false);
@@ -21,7 +22,7 @@ export  function Header() {
 	const [menuItems, setmMenuItems] = useState(false);
 	const [search, setSearch] = useState(false);
 	const [login, setLogin] = useState(false);
-	const dishOnClick = useSelector((state: any) => state.dishes.value);
+	const [cart, setCart] = useState(false);
 
 	const users = useSelector((state: any) => state.user.value); 
 
@@ -44,6 +45,13 @@ export  function Header() {
 		setSearch(false);
 		setmMenuItems(false);
 		setLogin(true);
+	};
+	const openCart = () => {
+		cart? setCart(false):setCart(true)
+		setSearch(false);
+		setmMenuItems(false);
+		setLogin(false);
+		
 	};
 	const hideNavElements = () => {
 		IsOpen? setIsOpen(false): setIsOpen(true);
@@ -72,7 +80,6 @@ export  function Header() {
 			<Login login={login}>
 				{users.length===0?<User/>:<Logout/>}
 			</Login>
-			
 				<Line menuItems={menuItems}/>
 				<NavCloseButton 
 					title="close"
@@ -86,16 +93,17 @@ export  function Header() {
 				<SearchSubject search={search}>Search</SearchSubject>
 			</LogoClass>
 
-			<NavButton title="openMenu" src={menu} onClick={showNavbar}>
-				
-			</NavButton>
+			<NavButton title="openMenu" src={menu} onClick={showNavbar}></NavButton>
+			<CartOpen cart={cart}>
+				<Cart></Cart>
+			</CartOpen>
 			<RightSide>
 			<Search src={searchicon} hideIcons={hideIcons}  title="search" onClick={showSearchbar}>
 				</Search>
 				<LogIn src={user} hideIcons={hideIcons} title="login" onClick={showLogin}>
 					
 				</LogIn>
-				<Bag src={bag} hideIcons={hideIcons} title="bag">
+				<Bag src={bag} hideIcons={hideIcons} title="bag" onClick={openCart}>
 					
 				</Bag>
 			</RightSide>

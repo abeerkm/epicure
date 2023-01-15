@@ -116,6 +116,20 @@ export const DishNav = styled.div<{dish:boolean}>`
     margin-bottom:25rem;
 
 `;
+export const CartOpen = styled.div<{cart:boolean}>`
+    display:${btn=> btn.cart ? "block":"none"};
+    margin-bottom:25rem;
+    top: 2.8rem;
+    left: 0;
+    height: 23.9rem;
+    width: 100%;
+    background-color: white;
+    transition: 0.5s;
+    justify-content: space-between;
+    z-index:99;
+    position: absolute;
+    overflow: scroll;
+`;
 export const NavButton = styled.img`
     color:rgba(0, 0, 0, 1);
     display: flex;
