@@ -16,7 +16,8 @@ export const Dish = () => {
   const [checkList, setList ]= useState<string[]>([]);
   const dispatch=useDispatch();
   const order= {
-     dishName: '', dishImage: '',side:'',changes:[''],quantity:0,price:0 }
+     dishName: '', dishImage: '',side:'',changes:[''],quantity:0,price:0 
+    }
 
   function incrementCount() {
     setCount(count+1);
@@ -43,8 +44,8 @@ export const Dish = () => {
     order.quantity=count;
     order.price=dish.price;
     dispatch(setOrder([order]));
+    navigate('/Resturants/RestaurantPage');
   }  
-console.log(orderd)
   return (
   <ComponentContainer>
     <Nav>

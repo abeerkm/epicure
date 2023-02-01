@@ -17,7 +17,7 @@ export const HomeContainer = styled.div`
 
     @media (max-width: 600px) {
     grid-template-columns: 100%;
-    grid-template-rows:  17.2rem 15rem 28rem 35rem;
+    grid-template-rows:  17.2rem 19rem 28rem 35rem;
 
     grid-template-areas:
         "searchbar"

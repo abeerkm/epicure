@@ -1,16 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { openCart } from '../../Functions/functions';
+import { setCart } from '../../pages/Resturants/slicers/cart';
 import { Topic } from '../Slider/SliderStyle'
-import { CardContainer, CartContainer,DishName,DishPrice,Image, Info, Price, Side } from './CartStyle'
-
+import { CardContainer, CartContainer,CheckOut,DishName,DishPrice,Image, Info, Price, Side } from './CartStyle'
+import { total } from './helpFunctions';
 export const Cart = () => {
   const orderDetails = useSelector((state: any) => state.orderDetails.value);
-  const total=()=>{
-    let sum=0;
-    orderDetails.map((amount: { quantity: number; price: number; })=>
-    {sum+=amount.quantity*amount.price}); 
-    return sum;}
-  
+  const navigate=useNavigate();
+	const dispatch=useDispatch();
+
   return (
     
     <CartContainer>
@@ -27,7 +27,9 @@ export const Cart = () => {
                 </Info>
             </CardContainer>
           )}
-          <div>TOTAL - ₪{total()}</div>
+          <div>TOTAL - ₪{total(orderDetails)}</div>
+          <CheckOut onClick={()=>{dispatch(setCart(false));navigate('/Checkout');
+          }}>checkout</CheckOut>
     </CartContainer>
   )
 }

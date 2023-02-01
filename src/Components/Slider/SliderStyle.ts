@@ -8,7 +8,6 @@ export const CardContainer = styled.div`
     align-items: flex-start;
     margin-top:2rem;
     width: 90%;
-    height: 19.5rem;
 `;
 export const Image = styled.img`
     width: 100%;

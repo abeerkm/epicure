@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { BagButton } from "../../Order/DishStyle";
 export const CartContainer= styled.div`
     display: flex;
     flex-direction: column;
@@ -55,7 +55,6 @@ export const Side= styled.p`
     font-size: 12px;
     line-height: 133%;
     letter-spacing: 1.23px;
-    white-space: nowrap;
 `
 export const Price= styled.div`
     display: flex;
@@ -64,8 +63,12 @@ export const Price= styled.div`
     align-items: flex-end;
     padding: 0px;
     gap: 2px;
-
+    margin-top: 1.1rem;
     width: 100%;
-    height: 18px;
+    height: 0;
 `
 export const DishPrice=styled.p``
+
+export const CheckOut=styled(BagButton)`
+    margin-top: -1.7rem;
+`

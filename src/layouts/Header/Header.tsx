@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject, Login, DishNav, CartOpen } from "./NavElements";
+import { useEffect, useState } from "react";
+import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject, Login, DishNav, CartOpen, BagContainer, Number } from "./NavElements";
 import menu from "../../images/menu.svg"
 import close from "../../images/close.svg"
 import searchicon from "../../images/search.svg"
@@ -10,12 +10,15 @@ import Footer from "../Footer/Footer";
 import { SearchComponent } from "../../Components/CommonComponents/CommonComponents";
 import { UserLogin } from "../../Components/login/login";
 import { User } from "../../Components/user/user";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../Components/user/logout";
 import { Link } from "react-router-dom";
 import { Dish } from "../../Order/Dish";
 import { Cart } from "../../Components/Cart/Cart";
 import { EmptyCart } from "../../Components/Cart/emptyCart";
+import { quantitySum } from "../../Components/Cart/helpFunctions";
+import { openCart } from "../../Functions/functions";
+import { setCart } from "../../pages/Resturants/slicers/cart";
 export  function Header() {
 	const [IsOpen, setIsOpen] = useState(false);
 	const [hideImage, sethideImage] = useState(false);
@@ -23,14 +26,19 @@ export  function Header() {
 	const [menuItems, setmMenuItems] = useState(false);
 	const [search, setSearch] = useState(false);
 	const [login, setLogin] = useState(false);
-	const [cart, setCart] = useState(false);
 	const orderDetails = useSelector((state: any) => state.orderDetails.value);
 	const users = useSelector((state: any) => state.user.value); 
+	const cart = useSelector((state: any) => state.cart.value);
+	const dispatch=useDispatch();
+
+	
+
 	 const showNavbar = () => {
 		hideNavElements();
 		setmMenuItems(true);
 		setSearch(false);
 		setLogin(false);
+		dispatch(setCart(false))
 
 	};
 	const showSearchbar = () => {
@@ -38,6 +46,7 @@ export  function Header() {
 		setSearch(true);
 		setmMenuItems(false);
 		setLogin(false);
+		dispatch(setCart(false))
 
 	};
 	const showLogin = () => {
@@ -45,14 +54,15 @@ export  function Header() {
 		setSearch(false);
 		setmMenuItems(false);
 		setLogin(true);
+		dispatch(setCart(false))
 	};
 	const openCart = () => {
-		cart? setCart(false):setCart(true)
+		cart? dispatch(setCart(false)):dispatch(setCart(true));
 		setSearch(false);
 		setmMenuItems(false);
 		setLogin(false);
-		
-	};
+	  };
+	
 	const hideNavElements = () => {
 		IsOpen? setIsOpen(false): setIsOpen(true);
 		if (IsOpen) {
@@ -98,14 +108,12 @@ export  function Header() {
 				{orderDetails.length===0? <EmptyCart/> :<Cart/>}
 			</CartOpen>
 			<RightSide>
-			<Search src={searchicon} hideIcons={hideIcons}  title="search" onClick={showSearchbar}>
-				</Search>
-				<LogIn src={user} hideIcons={hideIcons} title="login" onClick={showLogin}>
-					
-				</LogIn>
-				<Bag src={bag} hideIcons={hideIcons} title="bag" onClick={openCart}>
-					
-				</Bag>
+				<Search src={searchicon} hideIcons={hideIcons}  title="search" onClick={showSearchbar}/>
+				<LogIn src={user} hideIcons={hideIcons} title="login" onClick={showLogin}/>
+				<BagContainer onClick={()=>openCart()}>
+					<Bag src={bag} hideIcons={hideIcons} title="bag" />
+					<Number qnt={quantitySum(orderDetails)}>{quantitySum(orderDetails)}</Number>
+				</BagContainer>
 			</RightSide>
 		</NavHeader>
 	);

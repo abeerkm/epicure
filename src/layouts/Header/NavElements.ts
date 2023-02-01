@@ -222,7 +222,24 @@ export const Search = styled.img<{hideIcons:boolean}>`
 export const LogIn = styled(Search)`
 `;
 export const Bag = styled(Search)`
+    position:fixed;
 `;
+export const BagContainer=styled.div`
+    position: relative;
+    width: fit-content;
+`
+export const Number=styled.span<{qnt:Number}>`
+    font-size:12px;
+    background: black;
+    border-radius:50%;
+    padding:3px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
+    color:white;
+    display:${(quantity) => quantity.qnt>0 ? 'inline' : 'none'}
+`
 
 
 

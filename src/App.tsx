@@ -6,6 +6,7 @@ import Footer from './layouts/Footer/Footer';
 import { RestaurantPage } from './pages/Resturants/restaurantPage/restaurantPage';
 import { ToastContainer } from 'react-toastify';
 import { Dish } from './Order/Dish';
+import { Checkout } from './Components/Checkout/Checkout';
 function App() {
   return (
     <BrowserRouter>
@@ -28,7 +29,7 @@ function App() {
           <Route path="/Resturants" element={<Resturants />} />
           <Route path="/Resturants/RestaurantPage" element={<RestaurantPage />} />
           <Route path="/Order" element={<Dish />} />
-
+          <Route path="/Checkout" element={<Checkout />} />
         </Route>
       </Routes>
       <Footer />
