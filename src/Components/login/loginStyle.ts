@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SearchNav } from "../../layouts/Header/NavElements";
+import { SearchNav } from "../../layouts/Header/HeaderMobile/NavElements";
 export const Popup= styled.div`
     display: flex;
     flex-direction: column;

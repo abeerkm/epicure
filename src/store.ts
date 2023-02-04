@@ -10,6 +10,7 @@ import UserReduser from './Components/user/UserSlice';
 import dishArrayReduser from './pages/Resturants/slicers/dishArray';
 import OrderSlice from './Order/OrderSlice';
 import  cartSlice  from './pages/Resturants/slicers/cart';
+import checkoutReduser  from './pages/Resturants/slicers/checkout';
 const persistConfig = {
   key: 'root',
   storage: storage,
@@ -25,7 +26,8 @@ const _persistedReducer = persistCombineReducers (
   user:UserReduser,
   dishArray:dishArrayReduser,
   orderDetails:OrderSlice,
-  cart:cartSlice
+  cart:cartSlice,
+  checkout:checkoutReduser
   }
 );
 

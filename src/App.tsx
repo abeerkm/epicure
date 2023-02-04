@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './layouts/Header/Header';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import Header from './layouts/Header/HeaderMobile/HeaderMobile';
 import Homepage from './pages/HomePage/homepage';
 import Resturants from './pages/Resturants/Resturants';
 import Footer from './layouts/Footer/Footer';
 import { RestaurantPage } from './pages/Resturants/restaurantPage/restaurantPage';
 import { ToastContainer } from 'react-toastify';
 import { Dish } from './Order/Dish';
-import { Checkout } from './Components/Checkout/Checkout';
+import  Checkout  from './Components/Checkout/Checkout';
 function App() {
   return (
     <BrowserRouter>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/Checkout" element={<Checkout />} />
         </Route>
       </Routes>
-      <Footer />
+      {window.location.pathname === '/Checkout' ? '': <Footer /> }
     </BrowserRouter>
   );
 

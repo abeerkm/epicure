@@ -1,24 +1,21 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { List, ListA, LogoClass, LogoImage, MenuItems, Nav, NavButton, NavCloseButton, NavHeader, RightSide, Search, LogIn, Bag, Line, FooterDiv, SearchNav, SearchSubject, Login, DishNav, CartOpen, BagContainer, Number } from "./NavElements";
-import menu from "../../images/menu.svg"
-import close from "../../images/close.svg"
-import searchicon from "../../images/search.svg"
-import bag from "../../images/bag.svg"
-import user from "../../images/user.svg"
-import logo from "../../images/about-logo@3x 1.png"
-import Footer from "../Footer/Footer";
-import { SearchComponent } from "../../Components/CommonComponents/CommonComponents";
-import { UserLogin } from "../../Components/login/login";
-import { User } from "../../Components/user/user";
+import menu from "../../../images/menu.svg"
+import close from "../../../images/close.svg"
+import searchicon from "../../../images/search.svg"
+import bag from "../../../images/bag.svg"
+import user from "../../../images/user.svg"
+import logo from "../../../images/about-logo@3x 1.png"
+import Footer from "../../Footer/Footer";
+import { SearchComponent } from "../../../Components/CommonComponents/CommonComponents";
+import { User } from "../../../Components/user/user";
 import { useDispatch, useSelector } from "react-redux";
-import { Logout } from "../../Components/user/logout";
+import { Logout } from "../../../Components/user/logout";
 import { Link } from "react-router-dom";
-import { Dish } from "../../Order/Dish";
-import { Cart } from "../../Components/Cart/Cart";
-import { EmptyCart } from "../../Components/Cart/emptyCart";
-import { quantitySum } from "../../Components/Cart/helpFunctions";
-import { openCart } from "../../Functions/functions";
-import { setCart } from "../../pages/Resturants/slicers/cart";
+import { Cart } from "../../../Components/Cart/Cart";
+import { EmptyCart } from "../../../Components/Cart/emptyCart";
+import { quantitySum } from "../../../Components/Cart/helpFunctions";
+import { setCart } from "../../../pages/Resturants/slicers/cart";
 export  function Header() {
 	const [IsOpen, setIsOpen] = useState(false);
 	const [hideImage, sethideImage] = useState(false);

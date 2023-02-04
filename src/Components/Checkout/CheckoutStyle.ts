@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Title } from '../../Order/DishStyle'
+import { Button } from "../login/loginStyle";
 
-export const Container=styled.div`
-    margin-bottom:50rem;
+export const Container = styled.div`
+    margin-bottom:80rem;
 `
-export const Popup=styled.div`
+export const Popup = styled.div`
 isplay: flex;
 flex-direction: column;
 align-items: center;
@@ -13,15 +14,16 @@ gap: 40px;
 
 position: absolute;
 width: 100%;
-height: 100%;
+height: 160%;
 left: 0px;
 top: 46px;
 overflow-y: scroll;
 background: #FFFFFF;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+z-index:99;
 `
 
-export const Topic=styled.p`
+export const Topic = styled.p`
     margin-top:1rem;
     align-items: center;
     text-align: center;
@@ -30,7 +32,7 @@ export const Topic=styled.p`
     margin-bottom:1rem;
 
 `
-export const Payment=styled(Topic)`
+export const Payment = styled(Topic)`
     text-align: start;
 
 `
@@ -39,6 +41,7 @@ export const InputGroup = styled.label`
     margin:2rem 0;
     position:relative;
     display:inline-block;
+    width:100%;
     
 `;
 
@@ -59,7 +62,7 @@ export const InputField = styled.input`
   border: none;
   font-size: 18px;
   border-bottom: 1px solid #000000;
-
+  width:100%;
 
   &:focus
   {
@@ -90,3 +93,6 @@ export const InputField = styled.input`
  
 `;
 
+export const PaymentButton = styled(Button)`
+  width:100%
+`
